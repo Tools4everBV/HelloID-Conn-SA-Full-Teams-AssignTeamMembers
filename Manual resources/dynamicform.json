@@ -1,0 +1,163 @@
+[
+  {
+    "label": "Select Team",
+    "fields": [
+      {
+        "key": "filterDisplayName",
+        "templateOptions": {
+          "label": "Search for DisplayName",
+          "required": false
+        },
+        "type": "input",
+        "summaryVisibility": "Show",
+        "requiresTemplateOptions": true
+      },
+      {
+        "key": "teams",
+        "templateOptions": {
+          "label": "Select Team",
+          "required": true,
+          "grid": {
+            "columns": [
+              {
+                "headerName": "Display Name",
+                "field": "DisplayName"
+              },
+              {
+                "headerName": "Description",
+                "field": "Description"
+              },
+              {
+                "headerName": "Mail Nick Name",
+                "field": "MailNickName"
+              },
+              {
+                "headerName": "Visibility",
+                "field": "Visibility"
+              },
+              {
+                "headerName": "Archived",
+                "field": "Archived"
+              },
+              {
+                "headerName": "Group Id",
+                "field": "GroupId"
+              }
+            ],
+            "height": 300,
+            "rowSelection": "single"
+          },
+          "dataSourceConfig": {
+            "dataSourceGuid": "$dataSourceGetTeamsGuid",
+            "input": {
+              "propertyInputs": [
+                {
+                  "propertyName": "filterDisplayName",
+                  "otherFieldValue": {
+                    "otherFieldKey": "filterDisplayName"
+                  }
+                }
+			  ]
+            }
+          },
+          "useFilter": false,
+          "useDefault": false
+        },
+        "type": "grid",
+        "summaryVisibility": "Show",
+        "requiresTemplateOptions": true
+      }
+    ]
+  },
+  {
+    "label": "Assign Team Members",
+    "fields": [
+      {
+        "key": "Members",
+        "templateOptions": {
+          "label": "Members",
+          "required": false,
+          "filterable": true,
+          "useDataSource": true,
+          "dualList": {
+            "options": [],
+            "optionKeyProperty": "User",
+            "optionDisplayProperty": "Name"
+          },
+          "dataSourceConfig": {
+            "dataSourceGuid": "$dataSourceGetAzureUsersGuid",
+            "input": {
+              "propertyInputs": []
+            }
+          },
+          "destinationDataSourceConfig": {
+            "dataSourceGuid": "$dataSourceGetTeamsUsersGuid",
+            "input": {
+              "propertyInputs": [
+                {
+                  "propertyName": "Role",
+                  "staticValue": {
+                    "value": "Member"
+                  }
+                },
+                {
+                  "propertyName": "selectedGroup",
+                  "otherFieldValue": {
+                    "otherFieldKey": "teams"
+                  }
+                }
+              ]
+            }
+          },
+          "useFilter": false
+        },
+        "type": "duallist",
+        "summaryVisibility": "Show",
+        "requiresTemplateOptions": true
+      },
+      {
+        "key": "Owners",
+        "templateOptions": {
+          "label": "Owners",
+          "required": false,
+          "filterable": true,
+          "useDataSource": true,
+          "dualList": {
+            "options": [],
+            "optionKeyProperty": "User",
+            "optionDisplayProperty": "Name"
+          },
+          "dataSourceConfig": {
+            "dataSourceGuid": "$dataSourceGetAzureUsersGuid",
+            "input": {
+              "propertyInputs": []
+            }
+          },
+          "destinationDataSourceConfig": {
+            "dataSourceGuid": "$dataSourceGetTeamsUsersGuid",
+            "input": {
+              "propertyInputs": [
+                {
+                  "propertyName": "Role",
+                  "staticValue": {
+                    "value": "Owner"
+                  }
+                },
+                {
+                  "propertyName": "selectedGroup",
+                  "otherFieldValue": {
+                    "otherFieldKey": "teams"
+                  }
+                }
+              ]
+            }
+          },
+          "useFilter": false
+        },
+        "type": "duallist",
+        "summaryVisibility": "Show",
+        "requiresTemplateOptions": true
+      }
+    ]
+  }
+]
