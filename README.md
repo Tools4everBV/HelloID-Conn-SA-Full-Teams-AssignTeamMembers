@@ -44,3 +44,6 @@ This Delegated Form uses the following resources in order to run
 ### Task data source 'Teams-get-azure-users'
 
 ### Delegated form task 'Teams-assign-team-members'
+
+# HelloID Docs
+The official HelloID documentation can be found at: https://docs.helloid.com/
