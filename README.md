@@ -9,6 +9,7 @@ The Powershell Module "MicrosoftTeams" and "AzureAD" is required on the HelloID 
 ## Versioning
 | Version | Description | Date |
 | - | - | - |
+| 1.1.0   | Updated with code for SA agent | 2022/03/14  |
 | 1.0.1   | Added version number and updated all-in-one script | 2021/12/13  |
 | 1.0.0   | Initial release | 2020/12/05  |
 

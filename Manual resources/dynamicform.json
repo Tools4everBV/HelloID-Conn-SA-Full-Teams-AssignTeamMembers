@@ -1,171 +1,180 @@
 [
-    {
-        "label":  "Select Team",
-        "fields":  [
-                       {
-                           "key":  "filterDisplayName",
-                           "templateOptions":  {
-                                                   "label":  "Search for DisplayName",
-                                                   "required":  false
-                                               },
-                           "type":  "input",
-                           "summaryVisibility":  "Show",
-                           "requiresTemplateOptions":  true
-                       },
-                       {
-                           "key":  "teams",
-                           "templateOptions":  {
-                                                   "label":  "Select Team",
-                                                   "required":  true,
-                                                   "grid":  {
-                                                                "columns":  [
-                                                                                {
-                                                                                    "headerName":  "Display Name",
-                                                                                    "field":  "DisplayName"
-                                                                                },
-                                                                                {
-                                                                                    "headerName":  "Description",
-                                                                                    "field":  "Description"
-                                                                                },
-                                                                                {
-                                                                                    "headerName":  "Mail Nick Name",
-                                                                                    "field":  "MailNickName"
-                                                                                },
-                                                                                {
-                                                                                    "headerName":  "Visibility",
-                                                                                    "field":  "Visibility"
-                                                                                },
-                                                                                {
-                                                                                    "headerName":  "Archived",
-                                                                                    "field":  "Archived"
-                                                                                },
-                                                                                {
-                                                                                    "headerName":  "Group Id",
-                                                                                    "field":  "GroupId"
-                                                                                }
-                                                                            ],
-                                                                "height":  300,
-                                                                "rowSelection":  "single"
-                                                            },
-                                                   "dataSourceConfig":  {
-                                                                            "dataSourceGuid":  "$dataSourceGuid_0",
-                                                                            "input":  {
-                                                                                          "propertyInputs":  [
-                                                                                                                 {
-                                                                                                                     "propertyName":  "filterDisplayName",
-                                                                                                                     "otherFieldValue":  {
-                                                                                                                                             "otherFieldKey":  "filterDisplayName"
-                                                                                                                                         }
-                                                                                                                 }
-                                                                                                             ]
-                                                                                      }
-                                                                        },
-                                                   "useFilter":  false,
-                                                   "useDefault":  false
-                                               },
-                           "type":  "grid",
-                           "summaryVisibility":  "Show",
-                           "requiresTemplateOptions":  true
-                       }
-                   ]
-    },
-    {
-        "label":  "Assign Team Members",
-        "fields":  [
-                       {
-                           "key":  "Members",
-                           "templateOptions":  {
-                                                   "label":  "Members",
-                                                   "required":  false,
-                                                   "filterable":  true,
-                                                   "useDataSource":  true,
-                                                   "dualList":  {
-                                                                    "options":  [
-
-                                                                                ],
-                                                                    "optionKeyProperty":  "User",
-                                                                    "optionDisplayProperty":  "Name"
-                                                                },
-                                                   "dataSourceConfig":  {
-                                                                            "dataSourceGuid":  "$dataSourceGuid_1",
-                                                                            "input":  {
-                                                                                          "propertyInputs":  [
-
-                                                                                                             ]
-                                                                                      }
-                                                                        },
-                                                   "destinationDataSourceConfig":  {
-                                                                                       "dataSourceGuid":  "$dataSourceGuid_2",
-                                                                                       "input":  {
-                                                                                                     "propertyInputs":  [
-                                                                                                                            {
-                                                                                                                                "propertyName":  "Role",
-                                                                                                                                "staticValue":  {
-                                                                                                                                                    "value":  "Member"
-                                                                                                                                                }
-                                                                                                                            },
-                                                                                                                            {
-                                                                                                                                "propertyName":  "selectedGroup",
-                                                                                                                                "otherFieldValue":  {
-                                                                                                                                                        "otherFieldKey":  "teams"
-                                                                                                                                                    }
-                                                                                                                            }
-                                                                                                                        ]
-                                                                                                 }
-                                                                                   },
-                                                   "useFilter":  false
-                                               },
-                           "type":  "duallist",
-                           "summaryVisibility":  "Show",
-                           "requiresTemplateOptions":  true
-                       },
-                       {
-                           "key":  "Owners",
-                           "templateOptions":  {
-                                                   "label":  "Owners",
-                                                   "required":  false,
-                                                   "filterable":  true,
-                                                   "useDataSource":  true,
-                                                   "dualList":  {
-                                                                    "options":  [
-
-                                                                                ],
-                                                                    "optionKeyProperty":  "User",
-                                                                    "optionDisplayProperty":  "Name"
-                                                                },
-                                                   "dataSourceConfig":  {
-                                                                            "dataSourceGuid":  "$dataSourceGuid_3",
-                                                                            "input":  {
-                                                                                          "propertyInputs":  [
-
-                                                                                                             ]
-                                                                                      }
-                                                                        },
-                                                   "destinationDataSourceConfig":  {
-                                                                                       "dataSourceGuid":  "$dataSourceGuid_4",
-                                                                                       "input":  {
-                                                                                                     "propertyInputs":  [
-                                                                                                                            {
-                                                                                                                                "propertyName":  "Role",
-                                                                                                                                "staticValue":  {
-                                                                                                                                                    "value":  "Owner"
-                                                                                                                                                }
-                                                                                                                            },
-                                                                                                                            {
-                                                                                                                                "propertyName":  "selectedGroup",
-                                                                                                                                "otherFieldValue":  {
-                                                                                                                                                        "otherFieldKey":  "teams"
-                                                                                                                                                    }
-                                                                                                                            }
-                                                                                                                        ]
-                                                                                                 }
-                                                                                   },
-                                                   "useFilter":  false
-                                               },
-                           "type":  "duallist",
-                           "summaryVisibility":  "Show",
-                           "requiresTemplateOptions":  true
-                       }
-                   ]
-    }
+  {
+    "label": "Select Team",
+    "fields": [
+      {
+        "key": "teams",
+        "templateOptions": {
+          "label": "Select team",
+          "required": true,
+          "grid": {
+            "columns": [
+              {
+                "headerName": "Display Name",
+                "field": "DisplayName"
+              },
+              {
+                "headerName": "Description",
+                "field": "Description"
+              },
+              {
+                "headerName": "Mail Nick Name",
+                "field": "MailNickName"
+              },
+              {
+                "headerName": "Visibility",
+                "field": "Visibility"
+              },
+              {
+                "headerName": "Archived",
+                "field": "Archived"
+              },
+              {
+                "headerName": "Group Id",
+                "field": "GroupId"
+              }
+            ],
+            "height": 300,
+            "rowSelection": "single"
+          },
+          "dataSourceConfig": {
+            "dataSourceGuid": "$dataSourceGuid_0",
+            "input": {
+              "propertyInputs": []
+            }
+          },
+          "useFilter": true,
+          "useDefault": false
+        },
+        "type": "grid",
+        "summaryVisibility": "Show",
+        "requiresTemplateOptions": true,
+        "requiresKey": true,
+        "requiresDataSource": true
+      }
+    ]
+  },
+  {
+    "label": "Assign Team Members",
+    "fields": [
+      {
+        "key": "members",
+        "templateOptions": {
+          "label": "Members",
+          "required": false,
+          "filterable": true,
+          "useDataSource": true,
+          "dualList": {
+            "options": [
+              {
+                "guid": "75ea2890-88f8-4851-b202-626123054e14",
+                "Name": "Apple"
+              },
+              {
+                "guid": "0607270d-83e2-4574-9894-0b70011b663f",
+                "Name": "Pear"
+              },
+              {
+                "guid": "1ef6fe01-3095-4614-a6db-7c8cd416ae3b",
+                "Name": "Orange"
+              }
+            ],
+            "optionKeyProperty": "User",
+            "optionDisplayProperty": "Name"
+          },
+          "destinationDataSourceConfig": {
+            "dataSourceGuid": "$dataSourceGuid_1",
+            "input": {
+              "propertyInputs": [
+                {
+                  "propertyName": "selectedGroup",
+                  "otherFieldValue": {
+                    "otherFieldKey": "teams"
+                  }
+                },
+                {
+                  "propertyName": "Role",
+                  "staticValue": {
+                    "value": "Member"
+                  }
+                }
+              ]
+            }
+          },
+          "dataSourceConfig": {
+            "dataSourceGuid": "$dataSourceGuid_2",
+            "input": {
+              "propertyInputs": []
+            }
+          }
+        },
+        "type": "duallist",
+        "summaryVisibility": "Show",
+        "sourceDataSourceIdentifierSuffix": "source-datasource",
+        "destinationDataSourceIdentifierSuffix": "destination-datasource",
+        "requiresTemplateOptions": true,
+        "requiresKey": true,
+        "requiresDataSource": false
+      },
+      {
+        "key": "owners",
+        "templateOptions": {
+          "label": "Owners",
+          "required": false,
+          "filterable": true,
+          "useDataSource": true,
+          "dualList": {
+            "options": [
+              {
+                "guid": "75ea2890-88f8-4851-b202-626123054e14",
+                "Name": "Apple"
+              },
+              {
+                "guid": "0607270d-83e2-4574-9894-0b70011b663f",
+                "Name": "Pear"
+              },
+              {
+                "guid": "1ef6fe01-3095-4614-a6db-7c8cd416ae3b",
+                "Name": "Orange"
+              }
+            ],
+            "optionKeyProperty": "User",
+            "optionDisplayProperty": "Name"
+          },
+          "destinationDataSourceConfig": {
+            "dataSourceGuid": "$dataSourceGuid_3",
+            "input": {
+              "propertyInputs": [
+                {
+                  "propertyName": "selectedGroup",
+                  "otherFieldValue": {
+                    "otherFieldKey": "teams"
+                  }
+                },
+                {
+                  "propertyName": "Role",
+                  "staticValue": {
+                    "value": "Owner"
+                  }
+                }
+              ]
+            }
+          },
+          "dataSourceConfig": {
+            "dataSourceGuid": "$dataSourceGuid_4",
+            "input": {
+              "propertyInputs": []
+            }
+          }
+        },
+        "type": "duallist",
+        "summaryVisibility": "Show",
+        "sourceDataSourceIdentifierSuffix": "source-datasource",
+        "destinationDataSourceIdentifierSuffix": "destination-datasource",
+        "requiresTemplateOptions": true,
+        "requiresKey": true,
+        "requiresDataSource": false
+      }
+    ]
+  }
 ]
