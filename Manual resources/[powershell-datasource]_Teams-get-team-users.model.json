@@ -1,0 +1,18 @@
+[
+    {
+        "key":  "DisplayName",
+        "type":  0
+    },
+    {
+        "key":  "Mailaddress",
+        "type":  0
+    },
+    {
+        "key":  "Roles",
+        "type":  0
+    },
+    {
+        "key":  "Id",
+        "type":  0
+    }
+]
